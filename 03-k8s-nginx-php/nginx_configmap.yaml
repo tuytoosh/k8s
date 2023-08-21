@@ -13,13 +13,13 @@ data:
         root /var/www/html/public;
 
         location / {
-            rewrite ^ /index.php last;
+          rewrite ^ /index.php last;
         }
 
         location ~ \.php$ {
-            include fastcgi_params;
-            fastcgi_pass php-service:9000;
-            fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+          include fastcgi_params;
+          fastcgi_pass php-service:9000;
+          fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
         }
       }
     }
