@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-conf
+data:
+  nginx.conf: |
+    server {
+      listen 0.0.0.0:80;
+      root /var/www/html/public;
+
+      location / {
+          rewrite ^ /index.php last;
+      }
+
+      location ~ \.php$ {
+          include fastcgi_params;
+          fastcgi_pass php:9000;
+          fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+      }
+    }
