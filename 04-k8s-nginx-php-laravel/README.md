@@ -31,3 +31,9 @@ minikube service nginx-service --url
 ```
 
 Now you should see the home page of Laravel.
+
+With two replica of nginx service, if we stop one off the services, the other one is up and seving properly and we have a high availble service. 
+
+```
+nginx -s stop
+```

@@ -21,6 +21,7 @@ data:
           fastcgi_pass php-service:9000;
           fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
         }
+        
       }
     }
     
