@@ -1,6 +1,6 @@
 FROM php:8.2-fpm 
 
-COPY . /var/www/html
+COPY ./code /var/www/html
 
 EXPOSE 9000
 

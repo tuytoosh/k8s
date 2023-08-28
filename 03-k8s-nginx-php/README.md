@@ -4,7 +4,7 @@ Steps to follow:
 
 Build the php app:
 ```
-docker build ./code -t my-php-app:1.0.0
+docker build . -t my-php-app:1.0.0
 ```
 
 Apply all yaml files:
